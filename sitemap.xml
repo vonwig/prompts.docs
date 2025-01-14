@@ -3,23 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>/</loc>
+    <loc>https://vonwig.github.io/prompts.docs/</loc>
     <lastmod>2024-03-21T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/pages/authoring-prompts/</loc>
+    <loc>https://vonwig.github.io/prompts.docs/pages/authoring-prompts/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/pages/claude-desktop/</loc>
+    <loc>https://vonwig.github.io/prompts.docs/pages/claude-desktop/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/pages/</loc>
+    <loc>https://vonwig.github.io/prompts.docs/pages/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
