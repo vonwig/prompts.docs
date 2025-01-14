@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="light"
-  data-auto-appearance="true"><head>
+  data-auto-appearance="true"><head><script src="/prompts.docs/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=prompts.docs/livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   
   <meta http-equiv="content-language" content="en" />
@@ -15,7 +15,7 @@
   
   
   
-  <link rel="canonical" href="https://vonwig.github.io/prompts.docs/pages/authoring-prompts/" />
+  <link rel="canonical" href="http://localhost:1313/prompts.docs/pages/authoring-prompts/" />
   
   
   
@@ -64,7 +64,7 @@
   
   
   
-  <meta property="og:url" content="https://vonwig.github.io/prompts.docs/pages/authoring-prompts/">
+  <meta property="og:url" content="http://localhost:1313/prompts.docs/pages/authoring-prompts/">
   <meta property="og:site_name" content="Labs AI Tools for Devs">
   <meta property="og:title" content="Labs AI Tools for Devs">
   <meta property="og:locale" content="en">
@@ -86,7 +86,7 @@
     
     
     "inLanguage": "en",
-    "url" : "https:\/\/vonwig.github.io\/prompts.docs\/pages\/authoring-prompts\/",
+    "url" : "http:\/\/localhost:1313\/prompts.docs\/pages\/authoring-prompts\/",
     "author" : {
       "@type": "Person",
       "name": "Docker Labs"
@@ -100,7 +100,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "167"
+    "wordCount": "469"
   }]
   </script>
 
@@ -345,7 +345,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time><span class="px-2 text-primary-500">&middot;</span><span>167 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+  <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time><span class="px-2 text-primary-500">&middot;</span><span>469 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
   
 
   
@@ -459,51 +459,116 @@
     </span>        
     
 </h1>
-<p>The simplest prompt file is just markdown content.  We use <code>h1</code> headers to delineate the blocks containing prompts and the name of the header to determine the prompt role.
-A prompt file can also contain metadata about how to generate and run the prompt.</p>
+<p>A prompt is markdown content with a preamble describing tools available to the agent when executing this prompt.</p>
+<p>We use <code>h1</code> headers to delineate sections that should be exposed as prompts. When authoring this markdown, you can include non-prompt sections
+using headers that don&rsquo;t start with the word &ldquo;prompt&rdquo;.</p>
+<p>Here&rsquo;s a simple prompt that will use Docker official curl container to fetch gists from Github.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">extractors:
-</span></span><span class="line"><span class="cl">  <span class="k">-</span> name: linguist
-</span></span><span class="line"><span class="cl">    image: vonwig/go-linguist:latest
-</span></span><span class="line"><span class="cl">    command:
-</span></span><span class="line"><span class="cl">    <span class="k">-</span> -json
-</span></span><span class="line"><span class="cl">    output-handler: linguist
 </span></span><span class="line"><span class="cl">tools:
-</span></span><span class="line"><span class="cl">  <span class="k">-</span> name: findutils-by-name
-</span></span><span class="line"><span class="cl">    description: find files in a project by name
-</span></span><span class="line"><span class="cl">    parameters:
-</span></span><span class="line"><span class="cl">        type: object
-</span></span><span class="line"><span class="cl">        properties:
-</span></span><span class="line"><span class="cl">          glob:
-</span></span><span class="line"><span class="cl">            type: string
-</span></span><span class="line"><span class="cl">            description: the glob pattern for files that should be found
-</span></span><span class="line"><span class="cl">    container:
-</span></span><span class="line"><span class="cl">        image: vonwig/findutils:latest
-</span></span><span class="line"><span class="cl">        mounts:
-</span></span><span class="line"><span class="cl">          <span class="k">-</span> &#34;/Users/slim/.ssh:/root/.ssh&#34;
-</span></span><span class="line"><span class="cl">        command:
-</span></span><span class="line"><span class="cl">          <span class="k">-</span> find
-</span></span><span class="line"><span class="cl">          <span class="k">-</span> .
-</span></span><span class="line"><span class="cl">          <span class="k">-</span> -name
-</span></span><span class="line"><span class="cl">model: llama3.1                              # override model
-</span></span><span class="line"><span class="cl">url:  http://localhost/v1/chat/completions   # override model runner
-</span></span><span class="line"><span class="cl">stream: false                                # disable streaming
-</span></span><span class="line"><span class="cl">host-dir: /Users/slim/vonwig/altaservice     # override host-dir for testing
-</span></span><span class="line"><span class="cl">timeout: 60000                               # timeout for tools used in this prompt
+</span></span><span class="line"><span class="cl">  <span class="k">-</span> name: curl
 </span></span><span class="line"><span class="cl">---
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="gh"># Prompt system
+</span></span><span class="line"><span class="cl"><span class="gh"># prompt
 </span></span></span><span class="line"><span class="cl"><span class="gh"></span>
-</span></span><span class="line"><span class="cl">You are an expert on analyzing project content.
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="gh"># Prompt user
-</span></span></span><span class="line"><span class="cl"><span class="gh"></span>
-</span></span><span class="line"><span class="cl">{{#linguist}}
-</span></span><span class="line"><span class="cl">This project contains {{language}} code.
-</span></span><span class="line"><span class="cl">{{/linguist}}
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Can you find any language specific project files and list them?
+</span></span><span class="line"><span class="cl">Run the curl command, in silent mode, to fetch gists for user slimslenderslacks from GitHub.
 </span></span></code></pre></div>
+
+<h2 class="relative group">Tools 
+    <div id="tools" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#tools" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Some tools, like curl, are available by default.  However, the container for a tool can also be defined inline.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">tools:
+</span></span><span class="line"><span class="cl">  <span class="k">-</span> name: ffmpeg
+</span></span><span class="line"><span class="cl">    description: run the ffmpeg command
+</span></span><span class="line"><span class="cl">    parameters:
+</span></span><span class="line"><span class="cl">      type: object
+</span></span><span class="line"><span class="cl">      properties:
+</span></span><span class="line"><span class="cl">        args:
+</span></span><span class="line"><span class="cl">          description: arguments to pass to ffmpeg
+</span></span><span class="line"><span class="cl">          type: array
+</span></span><span class="line"><span class="cl">          items:
+</span></span><span class="line"><span class="cl">            type: string
+</span></span><span class="line"><span class="cl">    container:
+</span></span><span class="line"><span class="cl">      image: linuxserver/ffmpeg:version-7.1-cli
+</span></span><span class="line"><span class="cl">      command:
+</span></span><span class="line"><span class="cl">        <span class="k">-</span> &#34;{{args|into}}&#34;
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># prompt
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="cl">Use ffmpeg to convert the file UsingPuppeteer.mp4 into an animated gif file at 1 frame per second.
+</span></span><span class="line"><span class="cl">The output file should be named UsingPuppeteer.gif.
+</span></span></code></pre></div><p>The <code>name</code>, <code>description</code>, and <code>container</code> fields are mandatory, and you&rsquo;ll typically also have a <code>parameters</code> field to descript the json schema
+of the parameters that the agent will extract from the conversation.</p>
+<ul>
+<li><code>name</code> should uniquely identify the tool.</li>
+<li><code>description</code> is important. Good descriptions help the agent understand the tool and how to use it.</li>
+<li><code>container</code> sticks close to the format of a <a href="https://docs.docker.com/reference/compose-file/services/" target="_blank">compose service definition</a> but does
+fully implement it. Many of the most common top-level arguments are supported (<code>image</code>, <code>command</code>, <code>volumes</code>)</li>
+</ul>
+<p>You can interpolate into parameter properties into the container definition using strings with double curly braces. These substitutions also
+support filters, such as <code>into</code>, which spreads an array parameter.  There are some common patterns for moving parameters into the container
+runtime that we support for making it easier to use standard images.</p>
+
+
+<h2 class="relative group">Models 
+    <div id="models" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#models" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>If you don&rsquo;t specify a model in the preamble, the default model is currently set to be gpt-4 on openai. You can refer to other models and
+other endpoints using <code>model</code> and <code>url</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">tools:
+</span></span><span class="line"><span class="cl">  <span class="k">-</span> name: curl
+</span></span><span class="line"><span class="cl">model: claude-3-5-sonnet-20241022
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># prompt
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="cl">Run the curl command, in silent mode, to fetch gists for user slimslenderslacks from GitHub.
+</span></span></code></pre></div><p>If you specify an anthropic model, such as <code>model: claude-3-5-sonnet-20241022</code>, you do not need to specify the url. The correct anthropic
+endpoint will be used.</p>
+<p><strong>Note</strong>: Do not change tool definitinos to use <code>json_schema</code> instead of <code>properties</code>.  This will be done automatically.</p>
+
+
+<h3 class="relative group">OpenAI-compatible endpoints (Ollama) 
+    <div id="openai-compatible-endpoints-ollama" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#openai-compatible-endpoints-ollama" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>You can specify other openai-compatible endpoints by including a <code>url</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">tools:
+</span></span><span class="line"><span class="cl">  <span class="k">-</span> name: curl
+</span></span><span class="line"><span class="cl">url:  http://localhost/v1/chat/completions
+</span></span><span class="line"><span class="cl">stream: false
+</span></span><span class="line"><span class="cl">model: llama3.1
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># prompt
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="cl">Run the curl command, in silent mode, to fetch gists for user slimslenderslacks from GitHub.
+</span></span></code></pre></div><p><strong>Note</strong>: Set streaming to false if you&rsquo;re using Ollama for tool calling. Ollama does not currently stream tool calls.</p>
+
           
           
           
@@ -632,7 +697,7 @@ A prompt file can also contain metadata about how to generate and run the prompt
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
-  data-url="https://vonwig.github.io/prompts.docs/"
+  data-url="http://localhost:1313/prompts.docs/"
   style="z-index:500"
 >
   <div

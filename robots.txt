@@ -1,3 +1,3 @@
 User-agent: *
-Allow: /
-Sitemap: https://vonwig.github.io/prompts.docs/sitemap.xml
+Disallow: /
+Sitemap: http://localhost:1313/prompts.docs/sitemap.xml
