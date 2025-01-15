@@ -1,11 +1,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title> – Documentation</title>
+    <title> – Labs Projects</title>
     <link>/</link>
-    <description>Recent content in Documentation on </description>
+    <description>Recent content in Labs Projects on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 21 Mar 2024 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     

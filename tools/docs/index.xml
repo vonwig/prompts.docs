@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title> – AI Tools for Devs (Model Context Protocol)</title>
-    <link>//localhost:1313/docs/</link>
-    <description>Recent content in AI Tools for Devs (Model Context Protocol) on </description>
+    <title> – Documentation</title>
+    <link>/tools/docs/</link>
+    <description>Recent content in Documentation on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="//localhost:1313/docs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/tools/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title></title>
-      <link>//localhost:1313/docs/authoring-prompts/</link>
+      <link>/tools/docs/authoring-prompts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/docs/authoring-prompts/</guid>
+      <guid>/tools/docs/authoring-prompts/</guid>
       <description>
         
         
@@ -121,7 +121,7 @@ endpoint will be used.&lt;/p&gt;
   &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
 
   &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
-    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;Do not change tool definitinos to use &lt;code&gt;json_schema&lt;/code&gt; instead of &lt;code&gt;properties&lt;/code&gt;.  This will be done automatically.&lt;/div&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;When using anthropic, do not change tool definitions to use &lt;code&gt;json_schema&lt;/code&gt;. Use the openai standard of &lt;code&gt;parameters&lt;/code&gt; - this will be automatically converted before making the api call.&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -163,10 +163,10 @@ endpoint will be used.&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>//localhost:1313/docs/claude-desktop/</link>
+      <link>/tools/docs/claude-desktop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/docs/claude-desktop/</guid>
+      <guid>/tools/docs/claude-desktop/</guid>
       <description>
         
         

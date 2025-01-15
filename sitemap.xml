@@ -2,18 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
-    <lastmod>2024-03-21T00:00:00+00:00</lastmod>
+    <loc>/tools/</loc>
   </url><url>
-    <loc>/docs/</loc>
+    <loc>/speculative/</loc>
   </url><url>
-    <loc>/docs/authoring-prompts/</loc>
+    <loc>/tools/docs/authoring-prompts/</loc>
   </url><url>
-    <loc>/docs/claude-desktop/</loc>
-  </url><url>
-    <loc>/projects/</loc>
+    <loc>/tools/docs/claude-desktop/</loc>
   </url><url>
     <loc>/categories/</loc>
+  </url><url>
+    <loc>/tools/docs/</loc>
+  </url><url>
+    <loc>/</loc>
   </url><url>
     <loc>/tags/</loc>
   </url>
