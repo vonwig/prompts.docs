@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>– Documentation</title><link>aseURL/tools/docs/</link><description>Recent content in Documentation on</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="aseURL/tools/docs/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>aseURL/tools/docs/authoring-prompts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>aseURL/tools/docs/authoring-prompts/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>– Documentation</title><link>https://vonwig.github.io/prompts.docs/tools/docs/</link><description>Recent content in Documentation on</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://vonwig.github.io/prompts.docs/tools/docs/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://vonwig.github.io/prompts.docs/tools/docs/authoring-prompts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/authoring-prompts/</guid><description>
 &lt;h1>Prompt files&lt;/h1>&lt;p>A prompt is markdown content with a preamble describing tools available to the agent when executing this prompt.&lt;/p>
 &lt;p>We use &lt;code>h1&lt;/code> headers to delineate sections that should be exposed as prompts. When authoring this markdown, you can include non-prompt sections
 using headers that don&amp;rsquo;t start with the word &amp;ldquo;prompt&amp;rdquo;.&lt;/p>
@@ -124,7 +124,7 @@ title="Copy code"
 &lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
 &lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">Set streaming to false if you&amp;rsquo;re using Ollama for tool calling. Ollama does not currently stream tool calls.&lt;/div>
 &lt;/div>
-&lt;/div></description></item><item><title>Using Claude Desktop</title><link>aseURL/tools/docs/claude-desktop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>aseURL/tools/docs/claude-desktop/</guid><description>
+&lt;/div></description></item><item><title>Using Claude Desktop</title><link>https://vonwig.github.io/prompts.docs/tools/docs/claude-desktop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/claude-desktop/</guid><description>
 &lt;p>Enable mcp_run in your claude_desktop_config.json file using the following snippet. See the &lt;a href="https://modelcontextprotocol.io/quickstart/user" target="_blank" rel="noopener">quickstart for Claude Desktop Users&lt;/a> for more details.&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
