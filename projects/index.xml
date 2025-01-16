@@ -1,1 +1,18 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>– Projects</title><link>https://vonwig.github.io/prompts.docs/projects/</link><description>Recent content in Projects on</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://vonwig.github.io/prompts.docs/projects/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> – Projects</title>
+    <link>//localhost:1313/projects/</link>
+    <description>Recent content in Projects on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="//localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>
