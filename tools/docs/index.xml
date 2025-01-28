@@ -286,4 +286,36 @@ title="Copy code"
 &lt;p>We are moving these registration command to a command line. It doesn&amp;rsquo;t make sense to change the claude
 config each time you add or remote a defintion. However, because Claude Desktop has to be restarted
 every time a definition changes today (because of the missing notification), we will work
-with Anthropic to make this much smoother.&lt;/p></description></item></channel></rss>
+with Anthropic to make this much smoother.&lt;/p></description></item><item><title/><link>https://vonwig.github.io/prompts.docs/tools/docs/adding-to-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/adding-to-catalog/</guid><description>
+&lt;h1>Adding to Catalog&lt;/h1>&lt;p>Once you have published a prompt to a publicly accessible git repository, you can submit a PR to add it to the catalog.&lt;/p>
+&lt;p>&lt;a href="https://github.com/docker/labs-ai-tools-for-devs/blob/main/prompts/catalog.yaml" target="_blank" rel="noopener">catalog.yaml&lt;/a>&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;prompt-name&amp;gt;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">description&lt;/span>: &lt;span style="color:#ae81ff">&amp;lt;prompt-description&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">icon&lt;/span>: &lt;span style="color:#ae81ff">&amp;lt;prompt-icon&amp;gt;&lt;/span> &lt;span style="color:#75715e"># Required URL to icon&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ref: &amp;lt;prompt-ref&amp;gt; # Required ref to prompt. Format: &amp;lt;provider&amp;gt;:&amp;lt;repo&amp;gt;?ref=&amp;lt;ref&amp;gt;&amp;amp;path=&amp;lt;path&amp;gt; example&lt;/span>: &lt;span style="color:#ae81ff">github:docker/labs-ai-tools-for-devs?ref=main&amp;amp;path=prompts/examples/mcp-sqlite.md&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div></description></item><item><title>running the mcp/docker image</title><link>https://vonwig.github.io/prompts.docs/tools/docs/mcp-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/mcp-server/</guid><description>
+&lt;h2>Logging&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
+&lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When the Docker MCP server is &lt;a href="claude-desktop" >enabled for claude desktop&lt;/a>, the &lt;code>mcp/docker&lt;/code> image will be running
+locally. You can tail the server logs by running the following command:&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker run --rm -t --init &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -v docker-prompts:/prompts alpine:latest &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> tail -f /prompts/log/docker-mcp-server.out&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div></description></item></channel></rss>
