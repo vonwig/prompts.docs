@@ -131,12 +131,16 @@ or, in the case of RAG, are populated by some sort of retrieval process. Markdow
 contain template parameters.&lt;/p>
 &lt;p>For example, the above curl example could be re-written as a template with a &lt;code>{{ user }}&lt;/code> parameter.&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---yaml
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tools:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: curl
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>url: http://localhost/v1/chat/completions
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>stream: false
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>model: llama3.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arguments:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> description: the GitHub username to fetch gists for
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> required: true
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># prompt
@@ -151,8 +155,48 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
+&lt;h3>Template Engine&lt;span class="hx-absolute -hx-mt-20" id="template-engine">&lt;/span>
+&lt;a href="#template-engine" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>We support two templating engines today.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://mustache.github.io/mustache.5.html" target="_blank" rel="noopener">mustache&lt;/a> is the default&lt;/li>
+&lt;li>&lt;a href="https://docs.djangoproject.com/en/5.1/topics/templates/" target="_blank" rel="noopener">django&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>If you want to use django, then add the following field in the markdown preamble.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>prompt-format: &amp;#34;django&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arguments:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> description: the GitHub username to fetch gists for
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> required: true
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h3>MCP arguments&lt;span class="hx-absolute -hx-mt-20" id="mcp-arguments">&lt;/span>
+&lt;a href="#mcp-arguments" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>MCP clients can use &lt;code>arguments&lt;/code> to help you bind values into templates.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">prompt-format&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;django&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
 &lt;h3>Binding values during testing&lt;span class="hx-absolute -hx-mt-20" id="binding-values-during-testing">&lt;/span>
-&lt;a href="#binding-values-during-testing" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>When running in VSCode, you can set values of the parameters in the markdown preamble.&lt;/p>
+&lt;a href="#binding-values-during-testing" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>When running in VSCode, you can set values of the parameters in the markdown preamble. This is
+a great way to quickly test your prompt during development.&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>parameter-values:
@@ -216,29 +260,7 @@ title="Copy code"
 &lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
-&lt;/div>
-&lt;h3>Template Engine&lt;span class="hx-absolute -hx-mt-20" id="template-engine">&lt;/span>
-&lt;a href="#template-engine" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>We support two templating engines today.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://mustache.github.io/mustache.5.html" target="_blank" rel="noopener">mustache&lt;/a> is the default&lt;/li>
-&lt;li>&lt;a href="https://docs.djangoproject.com/en/5.1/topics/templates/" target="_blank" rel="noopener">django&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>If you want to use django, then add the following field in the markdown preamble.&lt;/p>
-&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>prompt-format: &amp;#34;django&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-&lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-title="Copy code"
->
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;h3>MCP arguments&lt;span class="hx-absolute -hx-mt-20" id="mcp-arguments">&lt;/span>
-&lt;a href="#mcp-arguments" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3></description></item><item><title>Using Claude Desktop</title><link>https://vonwig.github.io/prompts.docs/tools/docs/claude-desktop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/claude-desktop/</guid><description>
+&lt;/div></description></item><item><title>Using Claude Desktop</title><link>https://vonwig.github.io/prompts.docs/tools/docs/claude-desktop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/claude-desktop/</guid><description>
 &lt;p>Enable mcp_run in your claude_desktop_config.json file using the following snippet. See the &lt;a href="https://modelcontextprotocol.io/quickstart/user" target="_blank" rel="noopener">quickstart for Claude Desktop Users&lt;/a> for more details.&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
@@ -265,13 +287,10 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>Notice in the above snippet that the server is loaded with one example prompt, which you can view in our &lt;a href="https://github.com/docker/labs-ai-tools-for-devs/blob/main/prompts/examples/hello_world.md?plain=1" target="_blank" rel="noopener">public github repo&lt;/a>.
-This will have already been exposed using this MCP server so when using Claude Desktop, you can type &amp;ldquo;use hello docker to greet me with a joke&amp;rdquo;.&lt;/p>
-&lt;p>You&amp;rsquo;ll see a prompt asking if you want to run the &amp;ldquo;hello world&amp;rdquo; tool locally.&lt;/p>
-&lt;p>
-&lt;img src="../consent.png" alt="consent" loading="lazy" />&lt;/p>
-&lt;h2>More prompts&lt;span class="hx-absolute -hx-mt-20" id="more-prompts">&lt;/span>
-&lt;a href="#more-prompts" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>You can register new definitions in public github repos by adding additional &lt;code>--register&lt;/code> arguments.&lt;/p>
+&lt;h2>Adding Tools&lt;span class="hx-absolute -hx-mt-20" id="adding-tools">&lt;/span>
+&lt;a href="#adding-tools" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Install the &lt;a href="https://open.docker.com/extensions/marketplace?extensionId=docker/labs-ai-tools-for-devs" target="_blank" rel="noopener">&lt;code>docker/labs-ai-tools-for-devs&lt;/code> extension&lt;/a> to
+see a catalog of tools that you can install into the server.&lt;/p>
+&lt;p>You can also register new tool definitions by adding &lt;code>--register&lt;/code> arguments to the above server definition.&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;pre>&lt;code> &amp;#34;--register&amp;#34;, &amp;#34;github:docker/labs-ai-tools-for-devs?path=prompts/examples/swagger.md&amp;#34;&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
 &lt;button
@@ -283,11 +302,14 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>We are moving these registration command to a command line. It doesn&amp;rsquo;t make sense to change the claude
-config each time you add or remote a defintion. However, because Claude Desktop has to be restarted
-every time a definition changes today (because of the missing notification), we will work
-with Anthropic to make this much smoother.&lt;/p></description></item><item><title/><link>https://vonwig.github.io/prompts.docs/tools/docs/adding-to-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/adding-to-catalog/</guid><description>
-&lt;h1>Adding to Catalog&lt;/h1>&lt;p>Once you have published a prompt to a publicly accessible git repository, you can submit a PR to add it to the catalog.&lt;/p>
+&lt;p>Learn more about the tool definitions being referenced here using the page on &lt;a href="../authoring-prompts" >authoring the tool definitions&lt;/a>.&lt;/p>
+&lt;h2>Try a sample tool&lt;span class="hx-absolute -hx-mt-20" id="try-a-sample-tool">&lt;/span>
+&lt;a href="#try-a-sample-tool" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Try activating thel &lt;em>hello world&lt;/em> tool in our catalog (here&amp;rsquo;s the &lt;a href="https://github.com/docker/labs-ai-tools-for-devs/blob/main/prompts/examples/hello_world.md?plain=1" target="_blank" rel="noopener">definition&lt;/a> )
+and then type &amp;ldquo;use hello docker to greet me with a joke&amp;rdquo;.&lt;/p>
+&lt;p>You&amp;rsquo;ll see a prompt asking if you want to run the &amp;ldquo;hello world&amp;rdquo; tool locally.&lt;/p>
+&lt;p>
+&lt;img src="../consent.png" alt="consent" loading="lazy" />&lt;/p></description></item><item><title>Adding to Catalog</title><link>https://vonwig.github.io/prompts.docs/tools/docs/adding-to-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/adding-to-catalog/</guid><description>
+&lt;p>Once you have published a prompt to a publicly accessible git repository, you can submit a PR to add it to the catalog.&lt;/p>
 &lt;p>&lt;a href="https://github.com/docker/labs-ai-tools-for-devs/blob/main/prompts/catalog.yaml" target="_blank" rel="noopener">catalog.yaml&lt;/a>&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;prompt-name&amp;gt;&lt;/span>:
@@ -302,7 +324,12 @@ title="Copy code"
 &lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
-&lt;/div></description></item><item><title>running the mcp/docker image</title><link>https://vonwig.github.io/prompts.docs/tools/docs/mcp-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/mcp-server/</guid><description>
+&lt;/div>
+&lt;ul>
+&lt;li>choose a unique &lt;code>&amp;lt;prompt-name&amp;gt;&lt;/code>&lt;/li>
+&lt;li>the &lt;code>&amp;lt;prompt-ref&amp;gt;&lt;/code> must be a valid github reference uri, which is of the form &lt;code>github:&amp;lt;org-name&amp;gt;/&amp;lt;repo-name&amp;gt;?path=relative/path/to/file.md&lt;/code> (you can refer to a branch
+by adding another query parameter &lt;code>&amp;amp;ref=&amp;lt;branch-name&amp;gt;&lt;/code>)&lt;/li>
+&lt;/ul></description></item><item><title>mcp/docker server logs</title><link>https://vonwig.github.io/prompts.docs/tools/docs/mcp-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/mcp-server/</guid><description>
 &lt;h2>Logging&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
 &lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When the Docker MCP server is &lt;a href="claude-desktop" >enabled for claude desktop&lt;/a>, the &lt;code>mcp/docker&lt;/code> image will be running
 locally. You can tail the server logs by running the following command:&lt;/p>
@@ -318,4 +345,32 @@ title="Copy code"
 &lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
-&lt;/div></description></item></channel></rss>
+&lt;/div></description></item><item><title>Using with Gordon</title><link>https://vonwig.github.io/prompts.docs/tools/docs/gordon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/gordon/</guid><description>
+&lt;h2>gordon-mcp.yaml&lt;span class="hx-absolute -hx-mt-20" id="gordon-mcpyaml">&lt;/span>
+&lt;a href="#gordon-mcpyaml" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When you run &lt;code>docker ai&lt;/code> from any directory, docker ai will search that directory for a gordon-mcp.yml file.
+If that file is present, and configured with the &lt;code>mcp/docker&lt;/code> container then Gordon will load tools from
+this container and try to use them.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">services&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">mcp_docker&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">mcp/docker:latest&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">command&lt;/span>: &lt;span style="color:#ae81ff">serve --mcp --register github:docker/labs-ai-tools-for-devs?path=prompts/bootstrap.md&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">volumes&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">/var/run/docker.sock:/var/run/docker.sock&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">docker-prompts:/prompts&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">x-mcp-autoremove&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">volumes&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">docker-prompts&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">external&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h2>debugging&lt;span class="hx-absolute -hx-mt-20" id="debugging">&lt;/span>
+&lt;a href="#debugging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>We suggest using &lt;code>docker ai --debug&lt;/code> if you are trying to debug some of your tools while using the &lt;code>docker ai&lt;/code> cli.&lt;/p></description></item></channel></rss>
