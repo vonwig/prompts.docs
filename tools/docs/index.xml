@@ -261,9 +261,13 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div></description></item><item><title>Using Claude Desktop</title><link>https://vonwig.github.io/prompts.docs/tools/docs/claude-desktop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/claude-desktop/</guid><description>
-&lt;p>Enable mcp_run in your claude_desktop_config.json file using the following snippet. See the &lt;a href="https://modelcontextprotocol.io/quickstart/user" target="_blank" rel="noopener">quickstart for Claude Desktop Users&lt;/a> for more details.&lt;/p>
+&lt;h1>Quickstart&lt;/h1>&lt;p>Use our Docker Desktop extension to automatically register and use our tools.&lt;/p>
+&lt;p>&lt;a href="https://open.docker.com/extensions/marketplace?extensionId=docker/labs-ai-tools-for-devs" target="_blank" rel="noopener">Open in Docker Desktop&lt;/a>
+&lt;a href="https://hub.docker.com/extensions/docker/labs-ai-tools-for-devs" target="_blank" rel="noopener">Marketplace&lt;/a>&lt;/p>
+&lt;h1>Manual Setup&lt;/h1>&lt;p>Enable mcp_run in your claude_desktop_config.json file using the following snippet. See the &lt;a href="https://modelcontextprotocol.io/quickstart/user" target="_blank" rel="noopener">quickstart for Claude Desktop Users&lt;/a> for more details.&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;mcpServers&amp;#34;&lt;/span>: {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;mcp_docker&amp;#34;&lt;/span>: {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;command&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;docker&amp;#34;&lt;/span>,
