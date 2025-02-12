@@ -274,6 +274,7 @@ title="Copy code"
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;args&amp;#34;&lt;/span>: [
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;run&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;--rm&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;-i&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;--pull&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;always&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;-v&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;/var/run/docker.sock:/var/run/docker.sock&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;-v&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;/var/run/docker.raw.sock:/var/run/docker.raw.sock&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;--mount&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;type=volume,source=docker-prompts,target=/prompts&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;mcp/docker:latest&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;serve&amp;#34;&lt;/span>,
@@ -361,6 +362,7 @@ this container and try to use them.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">command&lt;/span>: &lt;span style="color:#ae81ff">serve --mcp --register github:docker/labs-ai-tools-for-devs?path=prompts/bootstrap.md&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">volumes&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">/var/run/docker.sock:/var/run/docker.sock&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">/var/run/docker.raw.sock:/var/run/docker.raw.sock&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">docker-prompts:/prompts&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">x-mcp-autoremove&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -374,6 +376,13 @@ title="Copy code"
 &lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
 &lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
 &lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
+&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">&lt;code>mcp/docker&lt;/code> uses the local docker engine to run containers.
+Binding &lt;code>docker.raw.sock&lt;/code> is temporary.&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;h2>debugging&lt;span class="hx-absolute -hx-mt-20" id="debugging">&lt;/span>
