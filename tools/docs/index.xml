@@ -1,9 +1,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>– Documentation</title><link>https://vonwig.github.io/prompts.docs/tools/docs/</link><description>Recent content in Documentation on</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://vonwig.github.io/prompts.docs/tools/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Authoring Prompts</title><link>https://vonwig.github.io/prompts.docs/tools/docs/authoring-prompts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/authoring-prompts/</guid><description>
 &lt;h1>Prompt files&lt;/h1>&lt;p>A prompt is markdown content with a preamble describing tools available to the agent when executing this prompt.&lt;/p>
-&lt;p>We use &lt;code>h1&lt;/code> headers to delineate sections that should be exposed as prompts. When authoring this markdown, you can include non-prompt sections
-using headers that don&amp;rsquo;t start with the word &amp;ldquo;prompt&amp;rdquo;.&lt;/p>
-&lt;p>Here&amp;rsquo;s a simple prompt that will use Docker official curl container to fetch gists from Github.&lt;/p>
+&lt;h2>Prompt Headers&lt;span class="hx-absolute -hx-mt-20" id="prompt-headers">&lt;/span>
+&lt;a href="#prompt-headers" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>We use &lt;code>h1&lt;/code> headers to delineate sections that should be exposed as prompts. &lt;code>h1&lt;/code> headers that start with &lt;code>prompt&lt;/code> will be sent to the model.&lt;/p>
+&lt;p>We use &lt;code>h2&lt;/code> headers to indicate metadata about the prompt.&lt;/p>
+&lt;p>Both h1 and h2 headers are reserved keywords and should not be used in the markdown.&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span># prompt I am a prompt header
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">## metadata I am metadata header
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>### header I am a regular header&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>You can also use h1 headers that don&amp;rsquo;t start with the word &amp;ldquo;prompt&amp;rdquo; to organize your markdown.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span># I am not a prompt header&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h2>Front-matter&lt;span class="hx-absolute -hx-mt-20" id="front-matter">&lt;/span>
+&lt;a href="#front-matter" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Prompt files support a yaml front-matter section that can be used to specify tools, models, and other metadata.
+Here&amp;rsquo;s a simple prompt that will use Docker official curl container to fetch gists from Github.&lt;/p>
+&lt;h2>Example&lt;span class="hx-absolute -hx-mt-20" id="example">&lt;/span>
+&lt;a href="#example" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tools:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: curl
@@ -21,8 +51,8 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;h2>Tools&lt;span class="hx-absolute -hx-mt-20" id="tools">&lt;/span>
-&lt;a href="#tools" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Some tools, like curl, are available by default. However, the container for a tool can also be defined inline.&lt;/p>
+&lt;h2>Adding Tools&lt;span class="hx-absolute -hx-mt-20" id="adding-tools">&lt;/span>
+&lt;a href="#adding-tools" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Some tools, like curl, are available by default. However, you can add your own tools by adding a &lt;code>tools&lt;/code> section to the front-matter.&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tools:
@@ -55,20 +85,39 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>The &lt;code>name&lt;/code>, &lt;code>description&lt;/code>, and &lt;code>container&lt;/code> fields are mandatory, and you&amp;rsquo;ll typically also have a &lt;code>parameters&lt;/code> field to descript the json schema
-of the parameters that the agent will extract from the conversation.&lt;/p>
+&lt;p>The &lt;code>name&lt;/code>, &lt;code>description&lt;/code>, and &lt;code>container&lt;/code> fields are mandatory, and you&amp;rsquo;ll typically also have a &lt;code>parameters&lt;/code> field to descript the json schema of the parameters that the agent will extract from the conversation.&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>name&lt;/code> should uniquely identify the tool.&lt;/li>
 &lt;li>&lt;code>description&lt;/code> is important. Good descriptions help the agent understand the tool and how to use it.&lt;/li>
 &lt;li>&lt;code>container&lt;/code> sticks close to the format of a &lt;a href="https://docs.docker.com/reference/compose-file/services/" target="_blank" rel="noopener">compose service definition&lt;/a> but does
 fully implement it. Many of the most common top-level arguments are supported (&lt;code>image&lt;/code>, &lt;code>command&lt;/code>, &lt;code>volumes&lt;/code>)&lt;/li>
 &lt;/ul>
-&lt;p>You can interpolate into parameter properties into the container definition using strings with double curly braces. These substitutions also
-support filters, such as &lt;code>into&lt;/code>, which spreads an array parameter. There are some common patterns for moving parameters into the container
-runtime that we support for making it easier to use standard images.&lt;/p>
-&lt;h2>Models&lt;span class="hx-absolute -hx-mt-20" id="models">&lt;/span>
-&lt;a href="#models" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>If you don&amp;rsquo;t specify a model in the preamble, the default model is currently set to be gpt-4 on openai. You can refer to other models and
-other endpoints using &lt;code>model&lt;/code> and &lt;code>url&lt;/code>.&lt;/p>
+&lt;p>You can interpolate into parameter properties into the container definition using strings with double curly braces. These substitutions also support filters, such as &lt;code>into&lt;/code>, which spreads an array parameter. There are some common patterns for moving parameters into the container runtime that we support for making it easier to use standard images.&lt;/p>
+&lt;h2>Changing the Default Model&lt;span class="hx-absolute -hx-mt-20" id="changing-the-default-model">&lt;/span>
+&lt;a href="#changing-the-default-model" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>If you don&amp;rsquo;t specify a model in the preamble, the default model is currently set to be &lt;code>gpt-4&lt;/code> on OpenAI. You can refer to other models and their endpoints by specifying the &lt;code>model&lt;/code> and &lt;code>url&lt;/code> fields.&lt;/p>
+&lt;p>&lt;strong>We currentlysupport all models compatible with the OpenAI API or Anthropic API.&lt;/strong>&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tools:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: curl
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>model: llama3.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>url: http://localhost:11434/v1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># prompt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Run the curl command, in silent mode, to fetch gists for user slimslenderslacks from GitHub.&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;h3>Pre-configured endpoints&lt;span class="hx-absolute -hx-mt-20" id="pre-configured-endpoints">&lt;/span>
+&lt;a href="#pre-configured-endpoints" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>If you specify a model that we know about, such as &lt;code>model: claude-3-5-sonnet-20241022&lt;/code>, you do not need to specify the url. The correct anthropic endpoint will be used. Currently, we support pre-configured endpoints for Anthropic and OpenAI.&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tools:
@@ -88,45 +137,22 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;p>If you specify an anthropic model, such as &lt;code>model: claude-3-5-sonnet-20241022&lt;/code>, you do not need to specify the url. The correct anthropic
-endpoint will be used.&lt;/p>
 &lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
 &lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
 &lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
-&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">When using anthropic, do not change tool definitions to use &lt;code>json_schema&lt;/code>. Use the openai standard of &lt;code>parameters&lt;/code> - this will be automatically converted before making the api call.&lt;/div>
+&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">When using Anthropic models, do not change tool definitions to use &lt;code>json_schema&lt;/code>. Use the OpenAI standard of &lt;code>parameters&lt;/code> - this will be automatically converted before making the api call.&lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;h3>OpenAI-compatible endpoints (Ollama)&lt;span class="hx-absolute -hx-mt-20" id="openai-compatible-endpoints-ollama">&lt;/span>
-&lt;a href="#openai-compatible-endpoints-ollama" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>You can specify other openai-compatible endpoints by including a &lt;code>url&lt;/code>.&lt;/p>
-&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tools:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: curl
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>url: http://localhost/v1/chat/completions
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>stream: false
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>model: llama3.1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># prompt
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Run the curl command, in silent mode, to fetch gists for user slimslenderslacks from GitHub.&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-&lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-title="Copy code"
->
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
+&lt;h3>Streaming&lt;span class="hx-absolute -hx-mt-20" id="streaming">&lt;/span>
+&lt;a href="#streaming" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>The parameter &lt;code>stream&lt;/code> can be used to control whether the tool call is streamed to the model. This is useful for models that do not support streaming. The default is &lt;code>true&lt;/code>.&lt;/p>
 &lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
 &lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
 &lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
 &lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">Set streaming to false if you&amp;rsquo;re using Ollama for tool calling. Ollama does not currently stream tool calls.&lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;h2>Prompt Templates&lt;span class="hx-absolute -hx-mt-20" id="prompt-templates">&lt;/span>
-&lt;a href="#prompt-templates" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>It is common for prompts to contain parameters that are either extracted from a user interaction
+&lt;h2>Using Templates and Parameters in Prompts&lt;span class="hx-absolute -hx-mt-20" id="using-templates-and-parameters-in-prompts">&lt;/span>
+&lt;a href="#using-templates-and-parameters-in-prompts" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>It is common for prompts to contain parameters that are either extracted from a user interaction
 or, in the case of RAG, are populated by some sort of retrieval process. Markdown prompts can also
 contain template parameters.&lt;/p>
 &lt;p>For example, the above curl example could be re-written as a template with a &lt;code>{{ user }}&lt;/code> parameter.&lt;/p>
@@ -194,8 +220,8 @@ title="Copy code"
 &lt;/button>
 &lt;/div>
 &lt;/div>
-&lt;h3>Binding values during testing&lt;span class="hx-absolute -hx-mt-20" id="binding-values-during-testing">&lt;/span>
-&lt;a href="#binding-values-during-testing" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>When running in VSCode, you can set values of the parameters in the markdown preamble. This is
+&lt;h3>Testing Templates&lt;span class="hx-absolute -hx-mt-20" id="testing-templates">&lt;/span>
+&lt;a href="#testing-templates" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>When running in VSCode, you can set values of the parameters in the markdown preamble. This is
 a great way to quickly test your prompt during development.&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
@@ -210,61 +236,11 @@ title="Copy code"
 &lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
-&lt;/div>
-&lt;h3>Extractors&lt;span class="hx-absolute -hx-mt-20" id="extractors">&lt;/span>
-&lt;a href="#extractors" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h3>&lt;p>Extractors are container functions that can be used to extract values when the prompt has been deployed
-to a server. These extractors are also used to populate default values for a prompt when it is used from
-an MCP client.&lt;/p>
-&lt;p>Extractor definitions also follow the pattern of compose services. They are just docker images but with
-the additional requirement that they should write &lt;code>application/json&lt;/code> to stdout. This json will be used to
-populate the context for binding parameters in the prompt template.&lt;/p>
-&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>extractors:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: linguist
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: vonwig/go-linguist:latest
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> command:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> -json
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-&lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-title="Copy code"
->
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;p>We can create lists if the extractor json output has array types. For example,
-if we run the linguist tool to extract language from a project, our prompt can list
-them using the following template. You need to be familar with the json format output
-by linguist (eg that it creates lists of maps with a &lt;code>language&lt;/code> key).&lt;/p>
-&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>extractors:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: linguist
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># prompt
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{#linguist}}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>This project contains {{language}} code.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{/linguist}}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-&lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-title="Copy code"
->
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
 &lt;/div></description></item><item><title>Using Claude Desktop</title><link>https://vonwig.github.io/prompts.docs/tools/docs/claude-desktop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/claude-desktop/</guid><description>
 &lt;h1>Quickstart&lt;/h1>&lt;p>Use our Docker Desktop extension to automatically register and use our tools.&lt;/p>
 &lt;p>&lt;a href="https://open.docker.com/extensions/marketplace?extensionId=docker/labs-ai-tools-for-devs" target="_blank" rel="noopener">Open in Docker Desktop&lt;/a>
 &lt;a href="https://hub.docker.com/extensions/docker/labs-ai-tools-for-devs" target="_blank" rel="noopener">Marketplace&lt;/a>&lt;/p>
-&lt;h1>Manual Setup&lt;/h1>&lt;p>Enable mcp_run in your claude_desktop_config.json file using the following snippet. See the &lt;a href="https://modelcontextprotocol.io/quickstart/user" target="_blank" rel="noopener">quickstart for Claude Desktop Users&lt;/a> for more details.&lt;/p>
+&lt;h1>Manual Setup&lt;/h1>&lt;p>Enable mcp_docker in your claude_desktop_config.json file using the following snippet. See the &lt;a href="https://modelcontextprotocol.io/quickstart/user" target="_blank" rel="noopener">quickstart for Claude Desktop Users&lt;/a> for more details.&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 &lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
@@ -272,14 +248,9 @@ title="Copy code"
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;mcp_docker&amp;#34;&lt;/span>: {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;command&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;docker&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;args&amp;#34;&lt;/span>: [
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;run&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;--rm&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;-i&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;--pull&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;always&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;-v&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;/var/run/docker.sock:/var/run/docker.sock&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;--mount&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;type=volume,source=docker-prompts,target=/prompts&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;mcp/docker:latest&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;serve&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;--mcp&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;--register&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;github:docker/labs-ai-tools-for-devs?path=prompts/bootstrap.md&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;run&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;-i&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;--rm&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;alpine/socat&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;STDIO&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;TCP:host.docker.internal:8811&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
 &lt;button
@@ -312,7 +283,34 @@ title="Copy code"
 and then type &amp;ldquo;use hello docker to greet me with a joke&amp;rdquo;.&lt;/p>
 &lt;p>You&amp;rsquo;ll see a prompt asking if you want to run the &amp;ldquo;hello world&amp;rdquo; tool locally.&lt;/p>
 &lt;p>
-&lt;img src="../consent.png" alt="consent" loading="lazy" />&lt;/p></description></item><item><title>Adding to Catalog</title><link>https://vonwig.github.io/prompts.docs/tools/docs/adding-to-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/adding-to-catalog/</guid><description>
+&lt;img src="../consent.png" alt="consent" loading="lazy" />&lt;/p></description></item><item><title/><link>https://vonwig.github.io/prompts.docs/tools/docs/running_containers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/running_containers/</guid><description>
+&lt;ul>
+&lt;li>default is to run synchronously without stdin and in terminal model&lt;/li>
+&lt;li>image is mandatory
+&lt;ul>
+&lt;li>default is to try to pull image every time it runs&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>always binds docker-lsp volume (does not bind prompts volume - that&amp;rsquo;s only for the server)&lt;/li>
+&lt;li>if server is running with a host-dir, that host-dir will bind with /volume&lt;/li>
+&lt;li>there will pretty much always be a mounted /thread volume but see below&lt;/li>
+&lt;li>volumes is also an optional parameter in the container definition&lt;/li>
+&lt;li>workingdir (parameter is called workdir) is either set in the definition or defaults to /project&lt;/li>
+&lt;li>/var/run/docker.sock is always mounted&lt;/li>
+&lt;/ul>
+&lt;h1>parameters&lt;/h1>&lt;ul>
+&lt;li>volumes (list of strings) supports interpolation optional&lt;/li>
+&lt;li>command (list of strings) supports interpolation optional&lt;/li>
+&lt;li>workdir (string) supports interpolation optional&lt;/li>
+&lt;li>stdin (keys content, file) supports interpolation optional&lt;/li>
+&lt;li>entrypoint (string) does NOT suport interpolation optional&lt;/li>
+&lt;li>image (string) does not support interpolation mandatory&lt;/li>
+&lt;/ul>
+&lt;h1>interpolation&lt;/h1>&lt;ul>
+&lt;li>has a filter called &lt;code>|into&lt;/code> that will take a parameter list and &lt;em>spread&lt;/em> it into a string list&lt;/li>
+&lt;li>&lt;code>volumes&lt;/code> &lt;code>command&lt;/code> &lt;code>workdir&lt;/code> &lt;code>stdin.content&lt;/code> and &lt;code>stdin.file&lt;/code> all support interpoloation&lt;/li>
+&lt;li>&lt;code>image&lt;/code> and &lt;code>entrypoint&lt;/code> do not support interpolation&lt;/li>
+&lt;/ul></description></item><item><title>Adding to Catalog</title><link>https://vonwig.github.io/prompts.docs/tools/docs/adding-to-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/adding-to-catalog/</guid><description>
 &lt;p>Once you have published a prompt to a publicly accessible git repository, you can submit a PR to add it to the catalog.&lt;/p>
 &lt;p>&lt;a href="https://github.com/docker/labs-ai-tools-for-devs/blob/main/prompts/catalog.yaml" target="_blank" rel="noopener">catalog.yaml&lt;/a>&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
