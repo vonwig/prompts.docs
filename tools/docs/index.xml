@@ -283,34 +283,7 @@ title="Copy code"
 and then type &amp;ldquo;use hello docker to greet me with a joke&amp;rdquo;.&lt;/p>
 &lt;p>You&amp;rsquo;ll see a prompt asking if you want to run the &amp;ldquo;hello world&amp;rdquo; tool locally.&lt;/p>
 &lt;p>
-&lt;img src="../consent.png" alt="consent" loading="lazy" />&lt;/p></description></item><item><title/><link>https://vonwig.github.io/prompts.docs/tools/docs/running_containers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/running_containers/</guid><description>
-&lt;ul>
-&lt;li>default is to run synchronously without stdin and in terminal model&lt;/li>
-&lt;li>image is mandatory
-&lt;ul>
-&lt;li>default is to try to pull image every time it runs&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>always binds docker-lsp volume (does not bind prompts volume - that&amp;rsquo;s only for the server)&lt;/li>
-&lt;li>if server is running with a host-dir, that host-dir will bind with /volume&lt;/li>
-&lt;li>there will pretty much always be a mounted /thread volume but see below&lt;/li>
-&lt;li>volumes is also an optional parameter in the container definition&lt;/li>
-&lt;li>workingdir (parameter is called workdir) is either set in the definition or defaults to /project&lt;/li>
-&lt;li>/var/run/docker.sock is always mounted&lt;/li>
-&lt;/ul>
-&lt;h1>parameters&lt;/h1>&lt;ul>
-&lt;li>volumes (list of strings) supports interpolation optional&lt;/li>
-&lt;li>command (list of strings) supports interpolation optional&lt;/li>
-&lt;li>workdir (string) supports interpolation optional&lt;/li>
-&lt;li>stdin (keys content, file) supports interpolation optional&lt;/li>
-&lt;li>entrypoint (string) does NOT suport interpolation optional&lt;/li>
-&lt;li>image (string) does not support interpolation mandatory&lt;/li>
-&lt;/ul>
-&lt;h1>interpolation&lt;/h1>&lt;ul>
-&lt;li>has a filter called &lt;code>|into&lt;/code> that will take a parameter list and &lt;em>spread&lt;/em> it into a string list&lt;/li>
-&lt;li>&lt;code>volumes&lt;/code> &lt;code>command&lt;/code> &lt;code>workdir&lt;/code> &lt;code>stdin.content&lt;/code> and &lt;code>stdin.file&lt;/code> all support interpoloation&lt;/li>
-&lt;li>&lt;code>image&lt;/code> and &lt;code>entrypoint&lt;/code> do not support interpolation&lt;/li>
-&lt;/ul></description></item><item><title>Adding to Catalog</title><link>https://vonwig.github.io/prompts.docs/tools/docs/adding-to-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/adding-to-catalog/</guid><description>
+&lt;img src="../consent.png" alt="consent" loading="lazy" />&lt;/p></description></item><item><title>Adding to Catalog</title><link>https://vonwig.github.io/prompts.docs/tools/docs/adding-to-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/adding-to-catalog/</guid><description>
 &lt;p>Once you have published a prompt to a publicly accessible git repository, you can submit a PR to add it to the catalog.&lt;/p>
 &lt;p>&lt;a href="https://github.com/docker/labs-ai-tools-for-devs/blob/main/prompts/catalog.yaml" target="_blank" rel="noopener">catalog.yaml&lt;/a>&lt;/p>
 &lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
@@ -331,6 +304,48 @@ title="Copy code"
 &lt;li>choose a unique &lt;code>&amp;lt;prompt-name&amp;gt;&lt;/code>&lt;/li>
 &lt;li>the &lt;code>&amp;lt;prompt-ref&amp;gt;&lt;/code> must be a valid github reference uri, which is of the form &lt;code>github:&amp;lt;org-name&amp;gt;/&amp;lt;repo-name&amp;gt;?path=relative/path/to/file.md&lt;/code> (you can refer to a branch
 by adding another query parameter &lt;code>&amp;amp;ref=&amp;lt;branch-name&amp;gt;&lt;/code>)&lt;/li>
+&lt;/ul></description></item><item><title>defining container tools</title><link>https://vonwig.github.io/prompts.docs/tools/docs/running_containers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/running_containers/</guid><description>
+&lt;ul>
+&lt;li>default is to run synchronously without stdin and in terminal model&lt;/li>
+&lt;li>image is mandatory
+&lt;ul>
+&lt;li>default is to try to pull image every time it runs&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>always binds docker-lsp volume (does not bind prompts volume - that&amp;rsquo;s only for the server)&lt;/li>
+&lt;li>if server is running with a host-dir, that host-dir will bind with /volume&lt;/li>
+&lt;li>there will pretty much always be a mounted /thread volume but see below&lt;/li>
+&lt;li>volumes is also an optional parameter in the container definition&lt;/li>
+&lt;li>workingdir (parameter is called workdir) is either set in the definition or defaults to /project&lt;/li>
+&lt;li>/var/run/docker.sock is always mounted&lt;/li>
+&lt;/ul>
+&lt;h1>parameters&lt;/h1>&lt;ul>
+&lt;li>
+&lt;p>volumes (list of strings) supports interpolation optional&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>entrypoint (list of strings) supports interpolation optional&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>command (list of strings) supports interpolation optional&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>workdir (string) supports interpolation optional&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>stdin (keys content, file) supports interpolation optional&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>environment (map) does NOT support interpolation optional&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>image (string) does not support interpolation mandatory&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h1>interpolation&lt;/h1>&lt;ul>
+&lt;li>has a filter called &lt;code>|into&lt;/code> that will take a parameter list and &lt;em>spread&lt;/em> it into a string list&lt;/li>
+&lt;li>&lt;code>volumes&lt;/code> &lt;code>command&lt;/code> &lt;code>workdir&lt;/code> &lt;code>stdin.content&lt;/code> and &lt;code>stdin.file&lt;/code> all support interpoloation&lt;/li>
+&lt;li>&lt;code>image&lt;/code> and &lt;code>entrypoint&lt;/code> do not support interpolation&lt;/li>
 &lt;/ul></description></item><item><title>mcp/docker server logs</title><link>https://vonwig.github.io/prompts.docs/tools/docs/mcp-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/mcp-server/</guid><description>
 &lt;h2>Logging&lt;span class="hx-absolute -hx-mt-20" id="logging">&lt;/span>
 &lt;a href="#logging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When the Docker MCP server is &lt;a href="claude-desktop" >enabled for claude desktop&lt;/a>, the &lt;code>mcp/docker&lt;/code> image will be running
@@ -347,38 +362,4 @@ title="Copy code"
 &lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
 &lt;/button>
 &lt;/div>
-&lt;/div></description></item><item><title>Using with Gordon</title><link>https://vonwig.github.io/prompts.docs/tools/docs/gordon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/docs/gordon/</guid><description>
-&lt;h2>gordon-mcp.yaml&lt;span class="hx-absolute -hx-mt-20" id="gordon-mcpyaml">&lt;/span>
-&lt;a href="#gordon-mcpyaml" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>When you run &lt;code>docker ai&lt;/code> from any directory, docker ai will search that directory for a gordon-mcp.yml file.
-If that file is present, and configured with the &lt;code>mcp/docker&lt;/code> container then Gordon will load tools from
-this container and try to use them.&lt;/p>
-&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">services&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">mcp_docker&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">mcp/docker:latest&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">command&lt;/span>: &lt;span style="color:#ae81ff">serve --mcp --register github:docker/labs-ai-tools-for-devs?path=prompts/bootstrap.md&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">volumes&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">/var/run/docker.sock:/var/run/docker.sock&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">docker-prompts:/prompts&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">x-mcp-autoremove&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">volumes&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">docker-prompts&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">external&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-&lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-title="Copy code"
->
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div>
-&lt;div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
-&lt;div class="ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2">&lt;div class="hx-select-none hx-text-xl" style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ℹ️&lt;/div>&lt;/div>
-&lt;div class="hx-w-full hx-min-w-0 hx-leading-7">
-&lt;div class="hx-mt-6 hx-leading-7 first:hx-mt-0">&lt;code>mcp/docker&lt;/code> uses the local docker engine to run containers.&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;h2>debugging&lt;span class="hx-absolute -hx-mt-20" id="debugging">&lt;/span>
-&lt;a href="#debugging" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>We suggest using &lt;code>docker ai --debug&lt;/code> if you are trying to debug some of your tools while using the &lt;code>docker ai&lt;/code> cli.&lt;/p></description></item></channel></rss>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,55 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>– Posts</title><link>https://vonwig.github.io/prompts.docs/tools/posts/</link><description>Recent content in Posts on</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://vonwig.github.io/prompts.docs/tools/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>March 7th 2025 - Tool Descriptions</title><link>https://vonwig.github.io/prompts.docs/tools/posts/tool_descriptions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/posts/tool_descriptions/</guid><description>
+&lt;h1>Background&lt;/h1>&lt;p>When adding the qrencode tool, the easy part was the container definition. We simply wanted to expose the cli interface of qrencode since most foundation models did not need any additional prompting to use this tool correctly.&lt;/p>
+&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">tools&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">qrencode&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">description&lt;/span>: &lt;span style="color:#ae81ff">use the qrencode command&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">parameters&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">type&lt;/span>: &lt;span style="color:#ae81ff">object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">properties&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">args&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">type&lt;/span>: &lt;span style="color:#ae81ff">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">description&lt;/span>: &lt;span style="color:#ae81ff">The arguments to pass to qrencode&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">container&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">vonwig/qrencode:latest&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">command&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;{{args}}&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+&lt;button
+class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+title="Copy code"
+>
+&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
+&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;p>This works well but the output of qrencode is not text. It&amp;rsquo;s an image of course.&lt;/p>
+&lt;h2>Resources&lt;span class="hx-absolute -hx-mt-20" id="resources">&lt;/span>
+&lt;a href="#resources" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>MCP also supports the creation and update of resources. In order to turn simple tools, like qrencode,
+into resources, we decided to use the convention that any file written to the &lt;code>/thread&lt;/code> volume of a tool
+container, will be turned into a resource. However, qrencode doesn&amp;rsquo;t know this convention.&lt;/p>
+&lt;p>Our first try at making this easier was to use a prompt.&lt;/p>
+&lt;blockquote>
+&lt;p>Run the qrencode command to generate a QR code and write it to /thread/qrcode.png&lt;/p>
+&lt;/blockquote>
+&lt;p>This works but the current support for custom prompts in MCP clients is limited. Users were running
+the tool but we were generating tool calls that didn&amp;rsquo;t know about our &lt;code>/thread/&lt;/code> convention.&lt;/p>
+&lt;h2>Tool Descriptions&lt;span class="hx-absolute -hx-mt-20" id="tool-descriptions">&lt;/span>
+&lt;a href="#tool-descriptions" class="subheading-anchor" aria-label="Permalink for this section">&lt;/a>&lt;/h2>&lt;p>Every tool also has a description. If we change the above command description
+to be &amp;ldquo;generate a QR code and write it to /thread/qrcode.png&amp;rdquo;, is that sufficient? Will tool calls
+try to write new images to /thread so that they&amp;rsquo;ll automatically be turned into resources? This turns out
+to work quite well so we&amp;rsquo;ve updated our tool definition. We&amp;rsquo;ve removed the prompt and just added a better
+tool description.&lt;/p>
+&lt;h1>Summary&lt;/h1>&lt;p>Tool descriptions are important!&lt;/p>
+&lt;p>The tile in the MCP Catalog &lt;a href="https://open.docker.com/extensions/marketplace?extensionId=docker/labs-ai-tools-for-devs" target="_blank" rel="noopener">extension&lt;/a> for qrencode will contribute
+just one tool (the qrencode Docker image), and zero prompts. The description of the tool guides the model to
+write the tool&amp;rsquo;s output in a manner that allows to recognize the creation of new resources.&lt;/p>
+&lt;p>
+&lt;img src="../qrencode-catalog.png" alt="Catalog Entry" loading="lazy" />&lt;/p>
+&lt;p>This makes our prompt to generate a request to create a QR code quite simple. Here&amp;rsquo;s what this looks like
+in Claude Desktop.&lt;/p>
+&lt;blockquote>
+&lt;p>please generate a QR code for &lt;a href="https://www.docker.com" target="_blank" rel="noopener">www.docker.com&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>
+&lt;img src="../claude-qrcode.png" alt="Claude Entry" loading="lazy" />&lt;/p></description></item></channel></rss>

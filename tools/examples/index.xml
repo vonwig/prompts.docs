@@ -1,218 +1,321 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>– example prompts</title><link>https://vonwig.github.io/prompts.docs/tools/examples/</link><description>Recent content in example prompts on</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://vonwig.github.io/prompts.docs/tools/examples/index.xml" rel="self" type="application/rss+xml"/><item><title>call swagger api</title><link>https://vonwig.github.io/prompts.docs/tools/examples/swagger/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/examples/swagger/</guid><description>
-&lt;h1>Description&lt;/h1>&lt;p>Describe a two step process where we first grab a swagger.json file from the web and then use
-that to make an api call.&lt;/p>
-&lt;h1>Prompt Code&lt;/h1>&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tools:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: curl
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># prompt
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Use curl to fetch the openai spec at https://fakerestapi.azurewebsites.net/swagger/v1/swagger.json
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Then use curl to get all authors from the api.&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-&lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-title="Copy code"
->
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div></description></item><item><title>curl</title><link>https://vonwig.github.io/prompts.docs/tools/examples/curl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/examples/curl/</guid><description>
-&lt;h1>Description&lt;/h1>&lt;p>Fetch gists from your user from GitHub&lt;/p>
-&lt;h1>Prompt Code&lt;/h1>&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tools:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: curl
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>parameter-values:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user: slimslenderslacks
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># prompt
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Run the curl command, in silent mode, to fetch gists for user {{user}} from GitHub.&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-&lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-title="Copy code"
->
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div></description></item><item><title>filesystem</title><link>https://vonwig.github.io/prompts.docs/tools/examples/filesystem/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/examples/filesystem/</guid><description>
-&lt;h1>Description&lt;/h1>&lt;p>Add &lt;code>read_file&lt;/code> and &lt;code>write_file&lt;/code> tool containers.&lt;/p>
-&lt;h1>Prompt Code&lt;/h1>&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;pre>&lt;code>---
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> – example prompts</title>
+    <link>//localhost:1313/tools/examples/</link>
+    <description>Recent content in example prompts on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="//localhost:1313/tools/examples/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>call swagger api</title>
+      <link>//localhost:1313/tools/examples/swagger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/tools/examples/swagger/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Description&lt;/h1&gt;&lt;p&gt;Describe a two step process where we first grab a swagger.json file from the web and then use
+that to make an api call.&lt;/p&gt;
+&lt;h1&gt;Prompt Code&lt;/h1&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tools:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; name: curl
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# prompt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Use curl to fetch the openai spec at https://fakerestapi.azurewebsites.net/swagger/v1/swagger.json
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Then use curl to get all authors from the api.&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>curl</title>
+      <link>//localhost:1313/tools/examples/curl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/tools/examples/curl/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Description&lt;/h1&gt;&lt;p&gt;Fetch gists from your user from GitHub&lt;/p&gt;
+&lt;h1&gt;Prompt Code&lt;/h1&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tools:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; name: curl
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;parameter-values:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  user: slimslenderslacks
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# prompt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Run the curl command, in silent mode, to fetch gists for user {{user}} from GitHub.&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>filesystem</title>
+      <link>//localhost:1313/tools/examples/filesystem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/tools/examples/filesystem/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Description&lt;/h1&gt;&lt;p&gt;Add &lt;code&gt;read_file&lt;/code&gt; and &lt;code&gt;write_file&lt;/code&gt; tool containers.&lt;/p&gt;
+&lt;h1&gt;Prompt Code&lt;/h1&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;pre&gt;&lt;code&gt;---
 model: claude-3-5-sonnet-20241022
 tools:
-- name: read_file
-description: |
-read a file from disk
-Read the complete contents of a file from the file system.
-Handles various text encodings and provides detailed error messages
-if the file cannot be read. Use this tool when you need to examine
-the contents of a single file. Only works within allowed directories.
-parameters:
-type: object
-properties:
-path:
-type: string
-container:
-image: vonwig/bash_alpine
-entrypoint: cat
-command:
-- &amp;#34;{{path|safe}}&amp;#34;
-- name: write_file
-description: |
-Create a new file or completely overwrite an existing file with new content.
-Use with caution as it will overwrite existing files without warning.
-Handles text content with proper encoding. Only works within allowed directories.
-parameters:
-type: object
-properties:
-path:
-type: string
-content:
-type: string
-container:
-image: vonwig/bash_alpine
-command:
-- &amp;#34;-c&amp;#34;
-- &amp;#34;echo {{content|safe}} &amp;gt; {{path|safe}}&amp;#34;
+  - name: read_file
+    description: |
+      read a file from disk
+      Read the complete contents of a file from the file system.
+      Handles various text encodings and provides detailed error messages
+      if the file cannot be read. Use this tool when you need to examine
+      the contents of a single file. Only works within allowed directories.
+    parameters:
+      type: object
+      properties:
+        path:
+          type: string
+    container:
+      image: vonwig/bash_alpine
+      entrypoint: cat
+      command:
+        - &amp;#34;{{path|safe}}&amp;#34;
+  - name: write_file
+    description: |
+      Create a new file or completely overwrite an existing file with new content.
+      Use with caution as it will overwrite existing files without warning.
+      Handles text content with proper encoding. Only works within allowed directories.
+    parameters:
+      type: object
+      properties:
+        path:
+          type: string
+        content:
+          type: string
+    container:
+      image: vonwig/bash_alpine
+      command:
+        - &amp;#34;-c&amp;#34;
+        - &amp;#34;echo {{content|safe}} &amp;gt; {{path|safe}}&amp;#34;
 ---
+
 # prompt user
-read the file deps.edn and then write the string &amp;#34;blah.txt&amp;#34; into the file test.txt&lt;/code>&lt;/pre>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-&lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-title="Copy code"
->
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div></description></item><item><title>hello world</title><link>https://vonwig.github.io/prompts.docs/tools/examples/hello-world/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/examples/hello-world/</guid><description>
-&lt;h1>Description&lt;/h1>&lt;p>Just echo a greeting by running a container!&lt;/p>
-&lt;h1>Prompt Code&lt;/h1>&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>name: hello-docker
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>description: run the hello-docker
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>model: claude-3-5-sonnet-20241022
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tools:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: hello-docker
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> description: print a secret message
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> container:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: busybox:latest
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> command:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> echo
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> &amp;#34;Hello, World!&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># prompt
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Use hello world to print a secret message and then explain it to me&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-&lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-title="Copy code"
->
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div></description></item><item><title>sqlite</title><link>https://vonwig.github.io/prompts.docs/tools/examples/sqlite/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/examples/sqlite/</guid><description>
-&lt;h1>Description&lt;/h1>&lt;p>Use sqlite containers to provide 3 tools:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>read-query&lt;/code>&lt;/li>
-&lt;li>&lt;code>list-tables&lt;/code>&lt;/li>
-&lt;li>&lt;code>describe-table&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>The sqlite database ( /mcp/test1.db ) is mounted using a Docker volume.&lt;/p>
-&lt;p>Use these tools to ask Claude to explore the data using the tools above.&lt;/p>
-&lt;p>Here&amp;rsquo;s a fully worked
-&lt;a href="https://github.com/docker/labs-ai-tools-for-devs/blob/main/prompts/examples/mcp-sqlite.md?plain=1" target="_blank" rel="noopener">example&lt;/a>
-for building insights from a user defined topic.&lt;/p>
-&lt;h1>Prompt Code&lt;/h1>&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tools:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: read-query
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> description: Execute a SELECT query on the SQLite database
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parameters:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> type: object
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> properties:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> query:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> type: string
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> description: SELECT SQL query to execute
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> container: &lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>sqlite-container
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: &lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>sqlite-image vonwig/sqlite:latest
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> command:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>db &amp;#34;/mcp/test1.db&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> &amp;#34;{{query|safe}}&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> volumes: &lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>mounts
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> &amp;#34;mcp-test:/mcp&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: list-tables
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> description: List all tables in the SQLite database
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> container:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: *sqlite-image
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> command:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> *db
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> &amp;#34;SELECT name from sqlite_master WHERE type=&amp;#39;table&amp;#39;&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> volumes: *mounts
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: describe-table
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> description: Get the schema information for a specific table
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parameters:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> type: object
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> properties:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> table_name:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> type: string
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> description: Name of the table to describe
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> container:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: *sqlite-image
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> command:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> *db
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> &amp;#34;PRAGMA table_info({{table_name}})&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> volumes: *mounts
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-&lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-title="Copy code"
->
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div></description></item><item><title>use ffmpeg</title><link>https://vonwig.github.io/prompts.docs/tools/examples/ffmpeg/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vonwig.github.io/prompts.docs/tools/examples/ffmpeg/</guid><description>
-&lt;h1>Description&lt;/h1>&lt;p>Use ffmpeg to convert an mp4 file to an animated gif.&lt;/p>
-&lt;p>Users must refer to the mp4 file using a relative path from the working directory they&amp;rsquo;ve given to the mcp
-bridge server.&lt;/p>
-&lt;h1>Prompt Code&lt;/h1>&lt;div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-&lt;div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tools:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> name: ffmpeg
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> description: run the ffmpeg command
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parameters:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> type: object
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> properties:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> args:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> description: arguments to pass to ffmpeg
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> type: array
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> items:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> type: string
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> container:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: linuxserver/ffmpeg:version-7.1-cli
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> command:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">-&lt;/span> &amp;#34;{{args|into}}&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># prompt
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Use ffmpeg to convert the file UsingPuppeteer.mp4 into an animated gif file at 1 frame per second.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>The output file should be named UsingPuppeteer.gif.&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-&lt;button
-class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-title="Copy code"
->
-&lt;div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4">&lt;/div>
-&lt;/button>
-&lt;/div>
-&lt;/div></description></item></channel></rss>
+
+read the file deps.edn and then write the string &amp;#34;blah.txt&amp;#34; into the file test.txt&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>hello world</title>
+      <link>//localhost:1313/tools/examples/hello-world/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/tools/examples/hello-world/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Description&lt;/h1&gt;&lt;p&gt;Just echo a greeting by running a container!&lt;/p&gt;
+&lt;h1&gt;Prompt Code&lt;/h1&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;name: hello-docker
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;description: run the hello-docker
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;model: claude-3-5-sonnet-20241022
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tools:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; name: hello-docker
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    description: print a secret message
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    container:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      image: busybox:latest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      command:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; echo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; &amp;#34;Hello, World!&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# prompt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Use hello world to print a secret message and then explain it to me&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>sqlite</title>
+      <link>//localhost:1313/tools/examples/sqlite/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/tools/examples/sqlite/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Description&lt;/h1&gt;&lt;p&gt;Use sqlite containers to provide 3 tools:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;read-query&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list-tables&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;describe-table&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The sqlite database ( /mcp/test1.db ) is mounted using a Docker volume.&lt;/p&gt;
+&lt;p&gt;Use these tools to ask Claude to explore the data using the tools above.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s a fully worked
+&lt;a href=&#34;https://github.com/docker/labs-ai-tools-for-devs/blob/main/prompts/examples/mcp-sqlite.md?plain=1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;example&lt;/a&gt;
+for building insights from a user defined topic.&lt;/p&gt;
+&lt;h1&gt;Prompt Code&lt;/h1&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tools:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; name: read-query
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    description: Execute a SELECT query on the SQLite database
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    parameters:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      type: object
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      properties:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        query:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          type: string
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          description: SELECT SQL query to execute
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    container: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;amp;&lt;/span&gt;sqlite-container
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      image: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;amp;&lt;/span&gt;sqlite-image vonwig/sqlite:latest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      command:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;amp;&lt;/span&gt;db &amp;#34;/mcp/test1.db&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; &amp;#34;{{query|safe}}&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      volumes: &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;amp;&lt;/span&gt;mounts
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; &amp;#34;mcp-test:/mcp&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; name: list-tables
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    description: List all tables in the SQLite database
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    container:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      image: *sqlite-image
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      command:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; *db
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; &amp;#34;SELECT name from sqlite_master WHERE type=&amp;#39;table&amp;#39;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      volumes: *mounts
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; name: describe-table
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    description: Get the schema information for a specific table
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    parameters:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      type: object
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      properties:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        table_name:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          type: string
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          description: Name of the table to describe
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    container:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      image: *sqlite-image
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      command:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; *db
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; &amp;#34;PRAGMA table_info({{table_name}})&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      volumes: *mounts
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>use ffmpeg</title>
+      <link>//localhost:1313/tools/examples/ffmpeg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/tools/examples/ffmpeg/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Description&lt;/h1&gt;&lt;p&gt;Use ffmpeg to convert an mp4 file to an animated gif.&lt;/p&gt;
+&lt;p&gt;Users must refer to the mp4 file using a relative path from the working directory they&amp;rsquo;ve given to the mcp
+bridge server.&lt;/p&gt;
+&lt;h1&gt;Prompt Code&lt;/h1&gt;&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tools:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; name: ffmpeg
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    description: run the ffmpeg command
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    parameters:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      type: object
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      properties:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        args:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          description: arguments to pass to ffmpeg
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          type: array
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          items:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            type: string
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    container:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      image: linuxserver/ffmpeg:version-7.1-cli
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      command:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; &amp;#34;{{args|into}}&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# prompt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Use ffmpeg to convert the file UsingPuppeteer.mp4 into an animated gif file at 1 frame per second.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;The output file should be named UsingPuppeteer.gif.&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
